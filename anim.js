@@ -4,7 +4,7 @@ var lyrics = document.querySelector("#lyrics");
 
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
-  { text: "Desde que te conocí", time: 5 },
+  { text: "Desde que te conocí", time: 3 },
   { text: "Todo cambió en mi universo", time: 9 },
   { text: "Sentí el fuego", time: 13 },
   { text: "Y hoy, me arriesgo decirte", time: 17 },
@@ -70,7 +70,7 @@ var lyricsData = [
 function updateLyrics() {
   var time = Math.floor(audio.currentTime);
   var currentLine = lyricsData.find(
-    (line) => time >= line.time && time < line.time + 5
+    (line) => time >= line.time && time < line.time + 6
   );
 
   if (currentLine) {
