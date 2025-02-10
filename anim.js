@@ -69,17 +69,31 @@ var lyricsData = [
 // Animar las letras
 function updateLyrics() {
   var time = Math.floor(audio.currentTime);
-  var currentLine = lyricsData.find(
-    (line) => time >= line.time && time < line.time + 3
-  );
+  
+  for (var i = 0; i < lyricsData.length; i++) {
+    var currentLine = lyricsData[i];
+    var nextLine = lyricsData[i + 1];
 
-  if (currentLine) {
-    lyrics.innerHTML = currentLine.text;
-    lyrics.style.opacity = 1;
-  } else {
-    lyrics.style.opacity = 0;
-    lyrics.innerHTML = "";
+    if (nextLine) {
+      // Mostrar la letra hasta el inicio de la siguiente
+      if (time >= currentLine.time && time < nextLine.time) {
+        lyrics.innerHTML = currentLine.text;
+        lyrics.style.opacity = 1;
+        return;
+      }
+    } else {
+      // Última línea
+      if (time >= currentLine.time) {
+        lyrics.innerHTML = currentLine.text;
+        lyrics.style.opacity = 1;
+        return;
+      }
+    }
   }
+
+  // Ocultar si no hay línea activa
+  lyrics.style.opacity = 0;
+  lyrics.innerHTML = "";
 }
 
 setInterval(updateLyrics, 250);
