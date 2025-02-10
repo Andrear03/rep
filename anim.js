@@ -5,7 +5,7 @@ var lyrics = document.querySelector("#lyrics");
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
   { text: "Desde que te conocí", time: 3 },
-  { text: "Todo cambió en mi universo", time: 7 },
+  { text: "Todo cambió en mi universo", time: 5 },
   { text: "Sentí el fuego", time: 11 },
   { text: "Y hoy, me arriesgo decirte", time: 12 },
   { text: "Quiero tenerte", time: 16 },
