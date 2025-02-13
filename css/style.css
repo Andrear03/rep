@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
+
 * {
-    font-family: 'Poppins', cursive;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,9 +18,9 @@ body {
 
 .letter-container {
     background-color: white;
-    width: 100%;
+    width: 95%;
     max-width: 700px;
-    padding: 40px;
+    padding: 30px;
     border: 1px solid #e1e1e1;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -28,45 +29,42 @@ body {
     overflow: hidden;
 }
 
-.letter-container::before {
+/* Corazones flotantes */
+.letter-container::before, .letter-container::after {
     content: "❤️";
-    font-size: 4rem;
+    font-size: 3rem;
     position: absolute;
-    top: 10px;
-    right: 10px;
     animation: float 3s ease-in-out infinite;
 }
 
+.letter-container::before {
+    top: 15px;
+    right: 15px;
+}
+
 .letter-container::after {
-    content: "❤️";
-    font-size: 4rem;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    animation: float 3s ease-in-out infinite reverse;
+    bottom: 15px;
+    left: 15px;
+    animation-direction: reverse;
 }
 
+/* Animación de flotación */
 @keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
+/* Estilo del texto */
 .description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #333;
-    line-height: 1.8;
+    line-height: 1.6;
     font-weight: 300;
+    text-align: justify;
 }
 
 .highlight {
-    color: #000;
+    color: #ff4081;
     font-weight: bold;
 }
 
@@ -76,36 +74,50 @@ body {
     margin-top: 30px;
 }
 
+/* Botón */
 .button {
     text-align: center;
     margin-top: 20px;
-    color:black;
 }
 
 .botones {
-    padding: 12px 30px;
-    background-color: #000;
+    padding: 12px 25px;
+    background-color: pink;
     border-radius: 50px;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .botones a {
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .botones:hover {
-    background-color: #333;
+    background-color: #ff99cc;
 }
 
+/* Media Queries para Responsividad */
 @media screen and (max-width: 574px) {
+    .letter-container {
+        padding: 20px;
+    }
+
     .description {
         font-size: 1rem;
+        text-align: center;
     }
 
     .botones {
         padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Reducir tamaño de corazones en pantallas pequeñas */
+    .letter-container::before, .letter-container::after {
+        font-size: 2rem;
     }
 }
