@@ -7,7 +7,7 @@
 }
 
 :root {
-  --dark-color: #000;
+  --dark-color: #4493c4;
 }
 
 body {
@@ -41,6 +41,8 @@ body {
 }
 .titulo {
   margin-bottom: 180px;
+  margin-top: 20px;
+  top: 950px;
   font-family: "Arial Narrow", Arial, sans-serif;
   color: yellow;
   position: absolute;
@@ -49,6 +51,8 @@ body {
   opacity: 0;
   animation: fadeIn 3s ease-in-out forwards;
   text-align: center;
+  position: absolute;
+  z-index: 10;
 }
 @keyframes fadeIn {
   from {
@@ -99,7 +103,7 @@ body {
       transparent 19px,
       transparent 22px
     ),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+    linear-gradient(90deg, rgb(66, 58, 179), rgb(240, 240, 240));
 }
 
 .flowers {
@@ -213,6 +217,18 @@ body {
   -webkit-animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
   animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
 }
+
+.flower--4 {
+  -webkit-animation: moving-flower-1 4s linear infinite;
+  animation: moving-flower-1 4s linear infinite;
+}
+.flower--4 .flower__line {
+  height: 55vmin;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+
 .flower__leafs {
   position: relative;
   -webkit-animation: blooming-flower 2s backwards;
@@ -238,7 +254,7 @@ body {
   transform: translate(-50%, -100%);
   width: 8vmin;
   height: 8vmin;
-  background-color: #f9fd25;
+  background-color: #976395;
   /* background-color: #fd2525; */
   filter: blur(10vmin);
 }
@@ -250,7 +266,46 @@ body {
   height: 11vmin;
   border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
   background-color: #253bfd;
-  background-color: #fddd25;
+  background-color: #9c6ea8;
+  transform-origin: bottom center;
+  opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
+}
+.flower__leaf2 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8vmin;
+  height: 11vmin;
+  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
+  background-color: #253bfd;
+  background-color: #b3d367;
+  transform-origin: bottom center;
+  opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
+}
+.flower__leaf3 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8vmin;
+  height: 11vmin;
+  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
+  background-color: #0b1fd6;
+  background-color: #1b2edf;
+  transform-origin: bottom center;
+  opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
+}
+.flower__leaf4 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8vmin;
+  height: 11vmin;
+  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
+  background-color: #0b1fd6;
+  background-color: #c14949;
   transform-origin: bottom center;
   opacity: 0.9;
   box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
@@ -270,10 +325,41 @@ body {
   transform-origin: bottom left;
   border-radius: 4vmin 10vmin 4vmin 4vmin;
   transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-color: #7c6901;
+  background-color: #9c6ea8;
   z-index: 1;
   opacity: 0.8;
 }
+.flower__leaf--42 {
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
+  background-color: #b3d367;
+  z-index: 1;
+  opacity: 0.8;
+}
+.flower__leaf--43 {
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
+  background-color: #0b1fd6;
+  z-index: 1;
+  opacity: 0.8;
+}
+.flower__leaf--44 {
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
+  background-color: #c14949;
+  z-index: 1;
+  opacity: 0.8;
+}
+
 .flower__white-circle {
   position: absolute;
   left: -3.5vmin;
@@ -732,7 +818,7 @@ body {
   right: 0%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #4493c4;
   filter: blur(1.5vmin);
   z-index: 100;
 }
@@ -797,11 +883,11 @@ body {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
-  border-left: 2vmin solid #079097;
+  border-left: 2vmin solid #367ba5;
   background-image: linear-gradient(
     to bottom,
     transparent,
-    var(--dark-color) 60%
+    var(#367ba5) 60%
   );
   -webkit-mask-image: linear-gradient(to top, transparent 30%, #079097 60%);
 }
